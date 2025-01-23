@@ -18,3 +18,6 @@ q_error queue_create(queue* q);
 
 // check the size of the queue
 int queue_size(queue* q);
+
+// adds an element to the end of the queue
+q_error queue_add(queue* q, void* element);

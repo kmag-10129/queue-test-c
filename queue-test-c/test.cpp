@@ -18,4 +18,10 @@ namespace CQueue {
 		EXPECT_EQ(queue_size(&queue_test), 0);
 	}
 
+
+	// next test is to add an element to the end of the queue
+	TEST(QueueAdd, t_AddOneElementToQueue) {
+		EXPECT_EQ(queue_add(&queue_test, "apple"), Q_SUCCESS);
+	}
+
 }

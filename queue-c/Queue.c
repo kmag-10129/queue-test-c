@@ -12,6 +12,12 @@ q_error queue_create(queue* q)
 	else return Q_SUCCESS;
 }
 
-int queue_size(queue* q) {
+int queue_size(queue* q) 
+{
 	return q->total;
+}
+
+q_error queue_add(queue* q, void* element) 
+{
+	return Q_ERROR;
 }
