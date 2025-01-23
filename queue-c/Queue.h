@@ -37,3 +37,7 @@ void* queue_getelem(queue* q, char mode);
 // performs dequeue
 // (remove the first element in the queue)
 q_error queue_remove(queue* q);
+
+// destructor
+// there is no destructor present here so have to write our own one
+q_error queue_destroy(queue* q);

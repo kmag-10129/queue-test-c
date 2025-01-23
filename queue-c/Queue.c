@@ -79,5 +79,24 @@ void* queue_getelem(queue* q, char mode)
 }
 
 q_error queue_remove(queue* q) {
-	return Q_ERROR; // for testing
+	// note that if the size of q is 0 then there is no first value to remove!
+	if (q->total == 0) return Q_ERROR;
+
+	// the general algorithm is as follows:
+	// - set the first value to NULL
+	q->elements[0] = NULL;
+	// - shift all other values in the queue to the left.
+	for (int i = 0; i < q->total - 1; i++) {
+		q->elements[i] = q->elements[i + 1];
+		q->elements[i + 1] = NULL;
+	}
+	
+	// decreases the total items in the queue object by 1 after shift.
+	q->total--;
+	return Q_SUCCESS;
+}
+
+q_error queue_destroy(queue* q) 
+{
+	return Q_ERROR;
 }
