@@ -50,5 +50,7 @@ void* queue_firstelem(queue* q)
 
 void* queue_lastelem(queue* q) 
 {
+	// the last element is always the total elements - 1 (arrays start at 0). only access if something is actually in the queue.
+	if (q->total > 0) 	return q->elements[q->total - 1];
 	return NULL;
 }
