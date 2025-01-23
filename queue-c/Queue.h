@@ -25,7 +25,11 @@ int queue_size(queue* q);
 q_error queue_add(queue* q, void* element);
 
 // returns the first element of the queue
-void* queue_firstelem(queue* q);
+//void* queue_firstelem(queue* q);
 
 // returns the last element of the queue
-void* queue_lastelem(queue* q);
+//void* queue_lastelem(queue* q);
+
+// firstelem and lastelem are VERY similar so attempt to refactor them into one function
+// let's ignore elements in the middle for now.
+void* queue_getelem(queue* q, char mode);

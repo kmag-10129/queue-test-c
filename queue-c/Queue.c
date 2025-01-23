@@ -40,17 +40,40 @@ q_error queue_add(queue* q, void* element)
 	else return Q_ERROR;
 }
 
-void* queue_firstelem(queue* q)
-{
-	// accesses the first element IF there actually is something in the queue
-	if (q->total > 0) 	return q->elements[0];
 
+//void* queue_firstelem(queue* q)
+//{
+//	// accesses the first element IF there actually is something in the queue
+//	if (q->total > 0) 	return q->elements[0];
+//
+//	else return NULL;
+//}
+
+//void* queue_lastelem(queue* q) 
+//{
+//	// the last element is always the total elements - 1 (arrays start at 0). only access if something is actually in the queue.
+//	if (q->total > 0) 	return q->elements[q->total - 1];
+//	else return NULL;
+//}
+
+// this function replaces the two above functions!
+void* queue_getelem(queue* q, char mode) 
+{
+	int target;
+	if (q->total > 0)
+	{
+		switch (mode)
+		{
+		case 'f': // 'f'irst
+			target = 0;
+			break;
+		case 'l': // 'l'ast
+			target = q->total - 1;
+			break;
+		default: // ANYTHING ELSE
+			return NULL;
+		}
+		return q->elements[target];
+	}
 	else return NULL;
-}
-
-void* queue_lastelem(queue* q) 
-{
-	// the last element is always the total elements - 1 (arrays start at 0). only access if something is actually in the queue.
-	if (q->total > 0) 	return q->elements[q->total - 1];
-	return NULL;
 }
