@@ -42,7 +42,13 @@ q_error queue_add(queue* q, void* element)
 
 void* queue_firstelem(queue* q)
 {
+	// accesses the first element IF there actually is something in the queue
 	if (q->total > 0) 	return q->elements[0];
 
 	else return NULL;
+}
+
+void* queue_lastelem(queue* q) 
+{
+	return NULL;
 }

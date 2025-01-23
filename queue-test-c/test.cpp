@@ -34,6 +34,10 @@ namespace CQueue {
 		EXPECT_EQ("apple", test); // slightly modified test because a direct compare will compare pointer info which will be different.
 	}
 
-
-
+	// next test is to return the LAST element in the queue
+	TEST(QueueAdd, t_ReturnLastElement) {
+		EXPECT_EQ(queue_add(&queue_test, "banana"), Q_SUCCESS);
+		string test = (char*)queue_lastelem(&queue_test); // requires the type cast to turn the raw pointer info to a char array into a string for comparison
+		EXPECT_EQ("banana", test); // slightly modified test because a direct compare will compare pointer info which will be different.
+	}
 }
