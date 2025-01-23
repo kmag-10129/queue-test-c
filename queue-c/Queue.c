@@ -11,3 +11,7 @@ q_error queue_create(queue* q)
 	if ((q->size == 0)) return Q_ERROR; // for testing purposes.
 	else return Q_SUCCESS;
 }
+
+int queue_size(queue* q) {
+	return -1; // for testing purposes. i don't expect this value to actually be reachable
+}

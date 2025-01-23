@@ -12,4 +12,9 @@ namespace CQueue {
 		EXPECT_EQ(queue_create(&queue_test), Q_SUCCESS);
 	}
 
+	// next test is to check the size of the queue
+	TEST(QueueSize, t_CheckQueueSize) {
+		EXPECT_EQ(queue_size(&queue_test), 0);
+	}
+
 }

@@ -15,3 +15,6 @@ typedef struct queue {
 // constructor
 // since there's no default constructor like in c++ we will need to write a function (and test) for that
 q_error queue_create(queue* q);
+
+// check the size of the queue
+int queue_size(queue* q);
