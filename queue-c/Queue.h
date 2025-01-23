@@ -1,4 +1,6 @@
 #pragma once
+#include <stdio.h>
+#include <stdlib.h>
 
 #define INIT_SIZE 4
 typedef enum  {
