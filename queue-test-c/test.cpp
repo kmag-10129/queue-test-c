@@ -7,8 +7,9 @@ extern "C" {
 
 namespace CQueue {
 	
-	// test to create a queue given the above information. 
+	// test to create a queue
 	TEST(QueueCreate, t_SimpleQueueCreate) {
 		EXPECT_EQ(queue_create(&queue_test), Q_SUCCESS);
 	}
+
 }

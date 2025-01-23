@@ -1,11 +1,15 @@
 #pragma once
+
+#define INIT_SIZE 4
 typedef enum  {
 	Q_SUCCESS,
 	Q_ERROR
 } q_error;
 
-typedef struct {
-	int size; // how many elements are in the queue
+typedef struct queue {
+	void** elements; // element values
+	int total; // current number of items in queue
+	int size; // maximum items in queue
 } queue;
 
 // constructor
