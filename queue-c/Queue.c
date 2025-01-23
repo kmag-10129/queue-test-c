@@ -98,5 +98,12 @@ q_error queue_remove(queue* q) {
 
 q_error queue_destroy(queue* q) 
 {
-	return Q_ERROR;
+	free(q->elements); // free up void pointers taken up by the element info
+	q->size = 0;
+	q->total = 0;
+
+	// check if all have been cleared
+	if ((q->size == 0) && (q->total == 0)) return Q_SUCCESS;
+
+	else return Q_ERROR;
 }
