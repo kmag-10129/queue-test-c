@@ -6,7 +6,7 @@ extern "C" {
 }
 
 namespace CQueue {
-	
+
 	// test to create a queue
 	TEST(QueueCreate, t_SimpleQueueCreate) {
 		EXPECT_EQ(queue_create(&queue_test), Q_SUCCESS);
@@ -22,6 +22,11 @@ namespace CQueue {
 	// next test is to add an element to the end of the queue
 	TEST(QueueAdd, t_AddOneElementToQueue) {
 		EXPECT_EQ(queue_add(&queue_test, "apple"), Q_SUCCESS);
+	}
+
+	// next test is to return the first element of the queue
+	TEST(QueueAdd, t_ReturnFirstElement) {
+		EXPECT_EQ((char*)queue_firstelem(&queue_test), "apple");
 	}
 
 }

@@ -39,3 +39,8 @@ q_error queue_add(queue* q, void* element)
 	if (q->total > preTotal) return Q_SUCCESS;
 	else return Q_ERROR;
 }
+
+void* queue_firstelem(queue* q)
+{
+	
+}

@@ -23,3 +23,6 @@ int queue_size(queue* q);
 
 // adds an element to the end of the queue
 q_error queue_add(queue* q, void* element);
+
+// returns the first element of the queue
+void* queue_firstelem(queue* q);
