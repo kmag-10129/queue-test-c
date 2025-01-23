@@ -13,5 +13,5 @@ q_error queue_create(queue* q)
 }
 
 int queue_size(queue* q) {
-	return -1; // for testing purposes. i don't expect this value to actually be reachable
+	return q->total;
 }
