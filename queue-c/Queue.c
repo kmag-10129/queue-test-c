@@ -77,3 +77,7 @@ void* queue_getelem(queue* q, char mode)
 	}
 	else return NULL;
 }
+
+q_error queue_remove(queue* q) {
+	return Q_ERROR; // for testing
+}

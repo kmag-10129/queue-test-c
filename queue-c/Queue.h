@@ -33,3 +33,7 @@ q_error queue_add(queue* q, void* element);
 // firstelem and lastelem are VERY similar so attempt to refactor them into one function
 // let's ignore elements in the middle for now.
 void* queue_getelem(queue* q, char mode);
+
+// performs dequeue
+// (remove the first element in the queue)
+q_error queue_remove(queue* q);

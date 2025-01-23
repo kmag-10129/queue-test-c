@@ -42,4 +42,9 @@ namespace CQueue {
 		string test = (char*)queue_getelem(&queue_test, 'l'); // requires the type cast to turn the raw pointer info to a char array into a string for comparison
 		EXPECT_EQ("banana", test); // slightly modified test because a direct compare will compare pointer info which will be different.
 	}
+
+	// next test is to perform the dequeue (remove the FIRST element in the queue)
+	TEST(QueueAdd, t_Dequeue) {
+		EXPECT_EQ(queue_remove(&queue_test), Q_SUCCESS); // should pass if we are not trying to remove from an empty queue. 
+	}
 }
