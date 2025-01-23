@@ -1,9 +1,12 @@
 #include "pch.h"
+#include <string>
 
 extern "C" {
 #include "../queue-c/Queue.h"
 	queue queue_test;
 }
+
+using namespace std;
 
 namespace CQueue {
 
@@ -26,7 +29,11 @@ namespace CQueue {
 
 	// next test is to return the first element of the queue
 	TEST(QueueAdd, t_ReturnFirstElement) {
-		EXPECT_EQ((char*)queue_firstelem(&queue_test), "apple");
+		EXPECT_EQ(queue_add(&queue_test, "apple"), Q_SUCCESS);
+		string test = (char*)queue_firstelem(&queue_test); // requires the type cast to turn the raw pointer info to a char array into a string for comparison
+		EXPECT_EQ("apple", test); // slightly modified test because a direct compare will compare pointer info which will be different.
 	}
+
+
 
 }

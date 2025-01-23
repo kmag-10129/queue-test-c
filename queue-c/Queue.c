@@ -42,5 +42,7 @@ q_error queue_add(queue* q, void* element)
 
 void* queue_firstelem(queue* q)
 {
-	
+	if (q->total > 0) 	return q->elements[0];
+
+	else return NULL;
 }
